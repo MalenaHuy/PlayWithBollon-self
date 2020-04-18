@@ -15,13 +15,13 @@ const keyboardInfo = (e) =>{
     console.log(`keyboard event : ${e.type}, key: ${e.keyCode}`)
 }
 
-document.addEventListener ('keydown', keyboardInfo)
+
 document.addEventListener ('keyup', keyboardInfo)
 
 
 let para = document.querySelector('h2');
 var stop = false;
-    window.addEventListener("keydown", e => {
+    window.addEventListener("keyup", e => {
         if(stop){
         return 0;
     }
@@ -38,7 +38,7 @@ var stop = false;
       
         if (parseInt(para.style.fontSize) <= 10) {
           emoji.innerText = 'Done';
-          document.removeEventListener ('keydown', keyboardInfo)
+          document.removeEventListener ('keyup', keyboardInfo)
           stop = true;
       }
       else{
